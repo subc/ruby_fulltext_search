@@ -1,0 +1,2 @@
+class SearchIndex < ApplicationRecord
+end
