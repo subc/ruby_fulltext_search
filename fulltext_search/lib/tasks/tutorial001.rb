@@ -2,6 +2,16 @@
 require "#{Rails.root}/app/models/search_index"
 
 class Tasks::Tutorial001
+  def self.main
+    logger = Logger.new('log/development.log')
+    begin
+      execute
+    rescue => e
+      logger.error e.message
+      logger.error e.backtrace.join("\n")
+    end
+  end
+
   def self.execute
     p "start"
 
@@ -18,6 +28,4 @@ class Tasks::Tutorial001
     p "finish"
   end
 end
-
-
 
